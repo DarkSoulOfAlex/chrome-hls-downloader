@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chrome-hls-downloader"
+version = "0.1.0"
+description = "Download the HLS video playing in a Chromium-based browser, using the browser's own tokens and headers, and verify every frame."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "DarkSoulOfAlex" }]
+requires-python = ">=3.9"
+dependencies = ["websocket-client>=1.4"]
+keywords = ["hls", "m3u8", "downloader", "chrome", "cdp", "ffmpeg"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Homepage = "https://github.com/DarkSoulOfAlex/chrome-hls-downloader"
+
+[project.scripts]
+chrome-hls-dl = "chrome_hls_downloader.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["e2e: end-to-end test that needs a Chromium-based browser and ffmpeg"]
