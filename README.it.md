@@ -27,6 +27,28 @@ Protocol e ripete le richieste **esattamente come le manda il browser**. Quando 
 player cambia token, il download passa a quello nuovo, e dopo un `403` aspetta il
 successivo.
 
+## Quando usarlo invece di yt-dlp
+
+Nella maggior parte dei casi [yt-dlp](https://github.com/yt-dlp/yt-dlp) è lo strumento
+migliore. Usa yt-dlp quando:
+
+- il sito è tra le migliaia che supporta: estrae tutto senza bisogno del browser;
+- hai un URL `.m3u8` il cui token dura abbastanza per tutto il download: `--add-header`,
+  `--referer` e `--cookies-from-browser` bastano per header e cookie;
+- ti servono DASH, sottotitoli, scelta del formato, playlist o canali interi, o
+  post-elaborazione.
+
+Usa chrome-hls-downloader quando:
+
+- gli URL dei segmenti hanno un token che scade dopo pochi minuti, quindi un URL copiato
+  smette di funzionare a metà (`403`);
+- il CDN controlla `Origin`, `Referer`, `Sec-Fetch-*` o i cookie, e non vuoi ricostruirli
+  a mano;
+- il player sta in un iframe di un altro sito e trovare l'URL della playlist è una
+  seccatura;
+- vuoi la prova che ogni frame del risultato si decodifica (`chrome-hls-dl verify`
+  funziona anche sui file scaricati con altri programmi).
+
 ## Funzioni
 
 - **Nessun codice specifico per un sito.** Playlist, token, cookie e header vengono
