@@ -9,7 +9,7 @@ description = "Download the HLS video playing in a Chromium-based browser, using
 readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "DarkSoulOfAlex" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = ["websocket-client>=1.4"]
 keywords = ["hls", "m3u8", "downloader", "chrome", "cdp", "ffmpeg"]
 classifiers = [

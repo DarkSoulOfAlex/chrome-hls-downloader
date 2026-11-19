@@ -62,7 +62,7 @@ Parte da sola dopo il download, oppure a mano con `chrome-hls-dl verify FILE`:
 
 ## Installazione
 
-Servono Python ≥ 3.9, un browser basato su Chromium e, per l'MP4 e la verifica,
+Servono Python ≥ 3.10, un browser basato su Chromium e, per l'MP4 e la verifica,
 [ffmpeg](https://ffmpeg.org/) nel `PATH`.
 
 ```

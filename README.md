@@ -61,7 +61,7 @@ Run automatically after a download, or by hand with `chrome-hls-dl verify FILE`:
 
 ## Install
 
-You need Python ≥ 3.9, a Chromium-based browser and, for MP4 output and verification,
+You need Python ≥ 3.10, a Chromium-based browser and, for MP4 output and verification,
 [ffmpeg](https://ffmpeg.org/) on your `PATH`.
 
 ```
